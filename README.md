@@ -93,5 +93,5 @@ https://main.d2xoywhkvc4izz.amplifyapp.com/
 ## 시연 영상
 
 ```txt
-https://youtu.be/...
+https://youtu.be/FJyBzHqT3Gc
 ```
