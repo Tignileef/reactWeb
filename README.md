@@ -88,8 +88,6 @@ Build output directory: dist
 
 ## 시연 영상
 
-GitHub Actions 실행 화면, AWS S3 배포 결과, AWS Amplify Hosting 배포 결과, 좌석 입실/퇴실/고장 신고 기능을 포함하여 YouTube 링크를 작성합니다.
-
 ```txt
-https://youtube.com/...
+https://youtu.be/tHxhAFb_LPU
 ```
