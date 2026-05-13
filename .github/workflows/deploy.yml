@@ -15,6 +15,7 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
       CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
@@ -39,6 +40,7 @@ jobs:
         run: |
           test -n "$AWS_ACCESS_KEY_ID" || (echo "::error::Missing AWS_ACCESS_KEY_ID secret" && exit 1)
           test -n "$AWS_SECRET_ACCESS_KEY" || (echo "::error::Missing AWS_SECRET_ACCESS_KEY secret" && exit 1)
+          test -n "$AWS_SESSION_TOKEN" || (echo "::error::Missing AWS_SESSION_TOKEN secret" && exit 1)
           test -n "$AWS_REGION" || (echo "::error::Missing AWS_REGION secret" && exit 1)
           test -n "$S3_BUCKET_NAME" || (echo "::error::Missing S3_BUCKET_NAME secret" && exit 1)
 
@@ -47,6 +49,7 @@ jobs:
         with:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ env.AWS_SESSION_TOKEN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
